@@ -1,6 +1,7 @@
 from machine import Pin,PWM, ADC
 import time
 from Servo_Angle_Translator import translate
+from send_compensated_angle import main
 
 #Defines Shoulder servo as pin 0
 servo_S = PWM(Pin(0))
@@ -65,5 +66,7 @@ while True:
     value_X_previous = value_X
     value_Y_previous = value_Y
     #time.sleep_ms(100)
+    main(value_X, value_Y)
+
 
 
